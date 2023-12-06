@@ -14,15 +14,15 @@ jobs:
       # INstall Node on the runner
       - name: Install Node
         uses: actions/setup-node@v4
-        with:
-          node-version: 18
+      - name: Install dependencies
+        run: npm ci
         
 
       # Install the newman command line utility and also install the html extra reporter
-      - name: Install newman
-        run: |
-          npm install -g newman@5
-          npm install -g newman-reporter-htmlextra@1
+      # - name: Install newman
+      #   run: |
+      #     npm install -g newman@5
+      #     npm install -g newman-reporter-htmlextra@1
 
 
       # Make directory to upload the test results
